@@ -61,12 +61,15 @@
 import React, { useState } from "react";
 import { Link } from 'react-scroll';
 import './Navbar.css';
+import Logo from '../images/logo.png';
 import FeedbackForm from "./FeedbackForm";
 
 const Navbar = () => {
     return (
         <nav className="fixed top-0 w-full bg-white shadow-md p-4 flex justify-between items-center">
-            <img src="/logo.png" alt="Logo" className="h-10" />
+            <img src={Logo} alt="Logo" className="nav-logo" />
+            <input type="text" placeholder="Search for products" className="search" />
+            <button className="search-bt">Search</button>
             <div className="space-x-6">
                 <Link to="home" smooth={true} duration={500} className="cursor-pointer">Home</Link>
                 <Link to="categories" smooth={true} duration={500} className="cursor-pointer">Categories</Link>
