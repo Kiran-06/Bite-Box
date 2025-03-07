@@ -1,0 +1,111 @@
+.app {
+  font-family: Arial, sans-serif;
+}
+
+
+/* header component styling  starts*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%; 
+}
+
+.logo-img {
+  height: 40px; 
+  width: auto;
+}
+
+.bite-box-logo{
+  font-style: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  font-size: 16px;
+
+}
+
+.nav-home, .nav-cat, .nav-deals{
+  text-decoration: none;
+  color: black;
+}
+
+.nav-home:hover, .nav-cat:hover, .nav-deals:hover{
+  font-size: 18px;
+  transition: color 2s ease-in-out;
+}
+
+.search-container input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.auth button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* header component styling  ends*/
+
+
+/* promo banner compnonet styling starts */
+.promo-banner {
+  background-color: #ffeeba;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+/* promo banner compnonet styling ends */
+
+/* home component styling starts */
+.main-content {
+  display: flex;
+  margin: 2rem;
+}
+/* home component styling ends */
+
+/* left sidebar styling starts */
+.sidebar {
+  width: 200px;
+  margin-right: 2rem;
+}
+
+.help-section {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+/* left sidebar styling ends */
+
+/* Grid Comonent Styling starts */
+.content-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 2rem;
+  text-align: center;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Grid Comonent Styling starts */
