@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 
 
 function Header() {
-    return(
+    return (
         <header className="header">
             <div className="logo">
                 <img src={logo} alt="Site Logo" className="logo-img" />
@@ -21,7 +21,7 @@ function Header() {
                 <button><Link to="login">Login/Signup</Link></button>
             </div>
 
-      </header>
+        </header>
     )
 }
 

@@ -16,18 +16,22 @@
 .logo {
   display: flex;
   align-items: center;
-  height: 100%; 
+  height: 100%;
 }
 
 .logo-img {
-  height: 40px; 
+  height: 40px;
   width: auto;
 }
 
-.bite-box-logo{
-  font-style: bold;
+.bite-box-logo {
+  font-weight: bold;
+  font-family: 'Lucida Handwriting', sans-serif;
+
+  font-size: 1.5rem;
 }
 
+/* Navbar Style */
 .nav {
   display: flex;
   gap: 2rem;
@@ -35,14 +39,23 @@
 
 }
 
-.nav-home, .nav-cat, .nav-deals{
+.nav-home,
+.nav-cat,
+.nav-deals,
+.nav-feedback {
+  font-family: 'Papyrus', sans-serif;
+  font-weight: bold;
   text-decoration: none;
   color: black;
 }
 
-.nav-home:hover, .nav-cat:hover, .nav-deals:hover{
+.nav-home:hover,
+.nav-cat:hover,
+.nav-deals:hover,
+.nav-feedback:hover {
   font-size: 18px;
-  transition: color 2s ease-in-out;
+  color: #007bff;
+  transition: color 0.3s ease-in-out;
 }
 
 .search-container input {
@@ -59,6 +72,7 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
 /* header component styling  ends*/
 
 
@@ -69,6 +83,7 @@
   text-align: center;
   font-weight: bold;
 }
+
 /* promo banner compnonet styling ends */
 
 /* home component styling starts */
@@ -76,6 +91,7 @@
   display: flex;
   margin: 2rem;
 }
+
 /* home component styling ends */
 
 /* left sidebar styling starts */
@@ -89,6 +105,7 @@
   border: 1px solid #ddd;
   margin-bottom: 1rem;
 }
+
 /* left sidebar styling ends */
 
 /* Grid Comonent Styling starts */
@@ -108,4 +125,98 @@
   align-items: center;
   justify-content: center;
 }
-/* Grid Comonent Styling starts */
+
+/* Grid Comonent Styling ends */
+
+/* Category Styling starts */
+.heading {
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.category-box {
+  text-decoration: none;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+.category-box h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/* Category Styling ends */
+
+
+/* Feedback Styling starts */
+.feedback-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.feedback-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.feedback-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.feedback-form button:hover {
+  background-color: #218838;
+}
+
+.success-message {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Feedback Styling ends */
+
+/* LoginPage styling starts */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* LoginPage styling ends */
