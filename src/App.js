@@ -1,34 +1,49 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import Logo from './images/logo.png';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './components/pages/Home';
+import Layout from './components/Layout';
+import NoPage from './components/pages/NoPage';
+import { AuthProvider } from './components/contexts/AuthContext';
+import LoginSignUp from './components/pages/LoginSignUp';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import { AdminRoute } from './components/AdminRoute';
+import AdminDashboard from './components/pages/AdminDashboard';
 
-
-
-const App = () => {
+function App() {
   return (
+    <div className="app">
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              {/* Public Routes */}
+              <Route index element={<Home />} />
+              <Route path="auth" element={<LoginSignUp />} />
+              
+              {/* Protected Routes */}
+              <Route path='*' element={
+                  <ProtectedRoute>
+                      <NoPage />
+                  </ProtectedRoute>
+                }></Route>
+              
+              {/*Admin Routes */}
+              <Route path="admin" element={
+                  <AdminRoute>
+                    <AdminDashboard />
+                  </AdminRoute>
+                }/>
 
-    <div>
-      <img src={Logo} alt="Logo" className="h-10" />
-      <Navbar />
+            </Route>
+
+
+          </Routes>
+      </BrowserRouter>
+      </AuthProvider>
+      
+
     </div>
   );
-};
-
-
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<HomePage />} />
-//         <Route path="/LoginPage" element={<LoginPage />} />
-//         <Route path="/FeedbackForm" element={<FeedbackForm />} />
-//         <Route path="/categories" element={<Categories />} />
-//       </Routes>
-//     </Router>
-//   );
-// };
+}
 
 export default App;
-
