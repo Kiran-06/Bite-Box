@@ -72,7 +72,7 @@ const FeedbackForm = () => {
                         required
                     />
 
-                    <button type="submit">Submit Feedback</button>
+                    <button type="submit" class="fbutton">Submit Feedback</button>
                 </form>
             )}
         </div>

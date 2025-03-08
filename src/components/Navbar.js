@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
-import Category from "./Category";
+import { useScroll } from "./contexts/ScrollContext";
+import { useAuth } from "./contexts/AuthContext";
 
 function Navbar() {
+
+    const { scrollToCategories } = useScroll();
+    const { user } = useAuth();
+
     return (
         <nav className="nav">
-            <Link class="nav-home" to="/">Home</Link>
-            <Link class="nav-cat" to="/Category">Categories</Link>
-            <Link class="nav-deals" to="/deals">Deals</Link>
-            <Link class="nav-feedback" to="/feedback">Feedback</Link>
+            <Link className="nav-home" to="/">HOME</Link>
+            <Link onClick={scrollToCategories} className="nav-cat">CATEGORIES</Link>
+            <Link class="nav-deals" to="deals">DEALS</Link>
+            {user?.isAdmin && (
+                <Link className="nav-admin" to="/admin">
+                    ADMIN DASHBOARD
+                </Link>
+            )}
         </nav>
     )
 }
