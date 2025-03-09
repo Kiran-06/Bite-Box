@@ -1,7 +1,7 @@
 function Grid(){
     return (
         <div className="content-grid">
-          {[...Array(6)].map((_, i) => (
+          {[...Array(12)].map((_, i) => (
             <div key={i} className="card">
               {"SOME TRENDING ADD"}
             </div>
