@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useProductContext } from "../contexts/ProductContext";
 import { useEffect, useState } from "react";
 
@@ -35,21 +35,21 @@ function Products(){
                   
                 {
                     filteredProducts.map((product, index) => (
-                        <div class="product-box">
-                            <img alt={product.product_name}src={product.image} />
-                            <strong>{product.product_name}</strong>
-                            <span class="quantity">1 KG</span>
-                            <span class="price">Rs. {product.product_price}</span>
-                            <a  class="cart-btn">
-                                Add to Cart
-                            </a>
-                        </div>
+                        
+                            <div class="product-box">
+                                <Link to={`/productdesc/${product.id}`}>
+                                    <img alt={product.product_name}src={product.image} />
+                                    <strong>{product.product_name}</strong>
+                                    <span class="quantity">1 KG</span>
+                                    <span class="price">Rs. {product.product_price}</span>
+                                </Link>
+                                <a  class="cart-btn">
+                                    Add to Cart
+                                </a>
+                            </div>
                         )
                     )
                 }
-
-                    
-                   
                 </div>
             </section>
         </>

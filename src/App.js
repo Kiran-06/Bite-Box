@@ -13,6 +13,7 @@ import UmsDashboard from './components/pages/UmsDashboard';
 import Products from './components/pages/Products';
 import { CategoryProvider } from './components/contexts/CategoryContext';
 import { ProductProvider } from './components/contexts/ProductContext';
+import ProductDescription from './components/pages/ProductDescription';
 
 
 
@@ -31,6 +32,11 @@ function App() {
                     <Products />
                   </ProductProvider>
                 } />
+              <Route path="productdesc/:productId" element={ 
+                  <ProductProvider>
+                    <ProductDescription /> 
+                  </ProductProvider>
+                }/>
 
               {/* Protected Routes */}
               <Route path='*' element={

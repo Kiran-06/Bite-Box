@@ -462,6 +462,159 @@
   color: red;
   cursor: pointer;
 }
-
-
 /* Product page sytling ends */
+
+
+/* Product Description page styling starts */
+.product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 30px;
+}
+
+.product-image {
+  flex: 1;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  object-fit: cover;
+}
+
+.product-title {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #2c5f2d;
+}
+
+.price {
+  font-size: 28px;
+  color: #ff9800;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.features li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.features li:before {
+  content: "🍯";
+  margin-right: 10px;
+}
+
+.nutrition-facts {
+  background: #fff9e6;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.nutrition-facts h3 {
+  color: #2c5f2d;
+  margin-bottom: 15px;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-buy-now {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-add-to-cart {
+  background-color: #ff9800;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.quantity-selector {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-selector input {
+  width: 80px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.badge {
+  background: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.packaging {
+  color: #666;
+  margin-top: 15px;
+  font-style: italic;
+}
+/* Product Description page styling ends' */
