@@ -16,7 +16,7 @@ const UmsDashboard = () => {
   const [showForm, setShowForm] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     
     if (!userName || !password) {
       alert('Please fill all fields');
