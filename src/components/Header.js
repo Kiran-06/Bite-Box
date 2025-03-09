@@ -3,13 +3,16 @@ import logo from '../assets/logo.png';
 import { useAuth } from './contexts/AuthContext';
 import Navbar from './Navbar';
 import React, { useState } from 'react';
-import { FaSearch, FaShoppingCart, FaUser, FaBars, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaShoppingCart, FaUser, FaBars, FaTimes, FaLocationArrow } from 'react-icons/fa';
 
 
 function Header() {
 
     const { user, logout, setShowAuthModal, setIsLogin } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
+
+    const [showPopup, setShowPopup] = useState(false);
+    const [postalCode, setPostalCode] = useState("");
 
     return (
         <header className="header">
@@ -60,10 +63,15 @@ function Header() {
                                 </div>
                             )}
                         </div>
+                        {/* <button className="select-loc">
+                            <FaLocationArrow />
+                            <Link to="/LiveLocation"><span>Location</span></Link>
+                        </button> */}
                         <button className="auth-button" onClick={logout}>
                             <FaUser />
                             <span>Logout</span>
                         </button>
+
                     </>
                 ) : (
 
