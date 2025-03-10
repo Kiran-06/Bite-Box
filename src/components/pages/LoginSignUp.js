@@ -9,6 +9,7 @@ const LoginSignUp = () => {
   const location = useLocation();
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
+    id: '',
     firstName: '',
     lastName: '',
     username: '',
@@ -36,13 +37,12 @@ const LoginSignUp = () => {
         console.log(user);
         navigate(from, { replace: true });
       }
-    }
-    else {
+    } else {
       // Signup logic
       if (formData.password !== formData.confirmPassword) return alert('Passwords dont match');
       if (users.some(u => u.username === formData.username)) return alert('Username exists');
 
-      const newUser = { ...formData };
+      const newUser = { ...formData, id: Date.now() };
       delete newUser.confirmPassword;
       localStorage.setItem('users', JSON.stringify([...users, newUser]));
       login(newUser);
@@ -60,16 +60,8 @@ const LoginSignUp = () => {
               onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} />
             <input required placeholder="Last Name"
               onChange={(e) => setFormData({ ...formData, lastName: e.target.value })} />
-            {/* <input required placeholder="Sex"
-              onChange={(e) => setFormData({ ...formData, sex: e.target.value })} /> */}
-            <label>
-              <input type="radio" name="sex" value="male" checked={formData.sex === "male"}
-                onChange={(e) => setFormData({ ...formData, sex: e.target.value })} />Male
-            </label>
-            <label>
-              <input type="radio" name="sex" value="female" checked={formData.sex === "female"}
-                onChange={(e) => setFormData({ ...formData, sex: e.target.value })} />Female
-            </label>
+            <input required placeholder="Gender"
+              onChange={(e) => setFormData({ ...formData, sex: e.target.value })} />
             <input required type="number" placeholder="Age"
               onChange={(e) => setFormData({ ...formData, age: e.target.value })} />
           </>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Fruits from './Category/Fruits';
+import Fruits from '../Category/Fruits';
 
 const Category = () => {
     return (

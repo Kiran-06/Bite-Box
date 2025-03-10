@@ -2,17 +2,13 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { useAuth } from './contexts/AuthContext';
 import Navbar from './Navbar';
-import React, { useState } from 'react';
-import { FaSearch, FaShoppingCart, FaUser, FaBars, FaTimes, FaLocationArrow } from 'react-icons/fa';
+import React from 'react';
+import { FaSearch, FaShoppingCart, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 
 
 function Header() {
 
     const { user, logout, setShowAuthModal, setIsLogin } = useAuth();
-    const [isOpen, setIsOpen] = useState(false);
-
-    const [showPopup, setShowPopup] = useState(false);
-    const [postalCode, setPostalCode] = useState("");
 
     return (
         <header className="header">
@@ -46,32 +42,11 @@ function Header() {
                             <FaShoppingCart />
                             <span className="cart-count">1</span>
                         </button>
-                        <div
-                            className="user-dropdown"
-                            onMouseEnter={() => setIsOpen(true)}
-                            onMouseLeave={() => setIsOpen(false)}
-                        >
-                            <span className="user-name">
-                                <FaUser />
-                                Welcome: {user.firstName}</span>
-                            {isOpen && (
-                                <div className="dropdown-menu">
-                                    <ul>
-                                        <li><Link to="/profile">Profile</Link></li>
-                                        <li><Link to="/orders">Orders</Link></li>
-                                    </ul>
-                                </div>
-                            )}
-                        </div>
-                        {/* <button className="select-loc">
-                            <FaLocationArrow />
-                            <Link to="/LiveLocation"><span>Location</span></Link>
-                        </button> */}
+                        <span>Welcome: {user.firstName}</span>
                         <button className="auth-button" onClick={logout}>
                             <FaUser />
                             <span>Logout</span>
                         </button>
-
                     </>
                 ) : (
 
@@ -82,11 +57,10 @@ function Header() {
                                 <span>Login/Signup</span>
                             </button>
                         </Link>
-                        <Link to="/FeedbackForm">
-                            <button className="feedback-button">
-                                feedback
-                            </button>
-                        </Link>
+
+                        <button className="feedback-button">
+                            feedback
+                        </button>
                     </>
 
                 )}

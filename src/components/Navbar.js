@@ -9,13 +9,19 @@ function Navbar() {
 
     return (
         <nav className="nav">
-            <Link className="nav-home" to="/">HOME</Link>
-            <Link onClick={scrollToCategories} className="nav-cat">CATEGORIES</Link>
-            <Link class="nav-deals" to="deals">DEALS</Link>
+            <Link className="nav-item nav-home" to="/">HOME</Link>
+            <Link onClick={scrollToCategories} className="nav-item nav-cat">CATEGORIES</Link>
+            <Link class="nav-item nav-deals" to="deals">DEALS</Link>
             {user?.isAdmin && (
-                <Link className="nav-admin" to="/admin">
-                    ADMIN DASHBOARD
-                </Link>
+                <>
+                    <Link className="nav-item nav-admin" to="/admin">
+                        ADMIN DASHBOARD
+                    </Link>
+                    <Link className="nav-item nav-admin" to="/ums">
+                        USER MANAGEMENT
+                    </Link>
+                </>
+
             )}
         </nav>
     )

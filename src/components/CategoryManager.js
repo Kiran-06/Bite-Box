@@ -20,7 +20,7 @@ const CategoryManager = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!categoryName) {
+    if (!categoryName || !image) {
       alert('Please fill all fields');
       return;
     }
@@ -59,66 +59,67 @@ const CategoryManager = () => {
         Add New Category
       </button>
 
-      {showForm && (
-        <form onSubmit={handleSubmit} style={{ marginBottom: '30px', padding: '20px', border: '1px solid #ccc' }}>
-          <h3>{editingCategoryId ? 'Edit Category' : 'Add New Category'}</h3>
-          <div style={{ marginBottom: '15px' }}>
-            <label style={{ display: 'block', marginBottom: '5px' }}>Category Name: </label>
-            <input
-              type="text"
-              value={categoryName}
-              onChange={(e) => setCategoryName(e.target.value)}
-              style={{ width: '100%', padding: '8px' }}
-            />
-          </div>
-
-          <div style={{ marginBottom: '15px' }}>
-            <label style={{ display: 'block', marginBottom: '5px' }}>Image: </label>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-            />
-            {image && (
-              <img
-                src={image}
-                alt="Preview"
-                style={{
-                  maxWidth: '100px',
-                  marginTop: '10px',
-                  display: 'block',
-                  border: '1px solid #ddd'
-                }}
+      {
+        showForm && (
+          <form onSubmit={handleSubmit} style={{ marginBottom: '30px', padding: '20px', border: '1px solid #ccc' }}>
+            <h3>{editingCategoryId ? 'Edit Category' : 'Add New Category'}</h3>
+            <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '5px' }}>Category Name: </label>
+              <input
+                type="text"
+                value={categoryName}
+                onChange={(e) => setCategoryName(e.target.value)}
+                style={{ width: '100%', padding: '8px' }}
               />
-            )}
-          </div>
+            </div>
 
-          <button
-            type="submit"
-            style={{
-              marginRight: '10px',
-              padding: '8px 16px',
-              backgroundColor: '#4CAF50',
-              color: 'white',
-              border: 'none'
-            }}
-          >
-            {editingCategoryId ? 'Update' : 'Add'}
-          </button>
-          <button
-            type="button"
-            onClick={resetForm}
-            style={{
-              padding: '8px 16px',
-              backgroundColor: '#f44336',
-              color: 'white',
-              border: 'none'
-            }}
-          >
-            Cancel
-          </button>
-        </form>
-      )}
+            <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '5px' }}>Image: </label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+              />
+              {image && (
+                <img
+                  src={image}
+                  alt="Preview"
+                  style={{
+                    maxWidth: '100px',
+                    marginTop: '10px',
+                    display: 'block',
+                    border: '1px solid #ddd'
+                  }}
+                />
+              )}
+            </div>
+
+            <button
+              type="submit"
+              style={{
+                marginRight: '10px',
+                padding: '8px 16px',
+                backgroundColor: '#4CAF50',
+                color: 'white',
+                border: 'none'
+              }}
+            >
+              {editingCategoryId ? 'Update' : 'Add'}
+            </button>
+            <button
+              type="button"
+              onClick={resetForm}
+              style={{
+                padding: '8px 16px',
+                backgroundColor: '#f44336',
+                color: 'white',
+                border: 'none'
+              }}
+            >
+              Cancel
+            </button>
+          </form >
+        )}
 
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
@@ -145,7 +146,7 @@ const CategoryManager = () => {
                     borderRadius: '4px'
                   }}
                 />
-              </td>
+              </td >
               <td style={{ padding: '12px' }}>
                 <button
                   onClick={() => editCategory(category)}
@@ -173,11 +174,11 @@ const CategoryManager = () => {
                   Delete
                 </button>
               </td>
-            </tr>
+            </tr >
           ))}
-        </tbody>
-      </table>
-    </div>
+        </tbody >
+      </table >
+    </div >
   );
 };
 

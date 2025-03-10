@@ -8,7 +8,13 @@ import LoginSignUp from './components/pages/LoginSignUp';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { AdminRoute } from './components/AdminRoute';
 import AdminDashboard from './components/pages/AdminDashboard';
-import FeedbackForm from './components/pages/Feedback';
+import { UmsProvider } from './components/contexts/UmsContext';
+import UmsDashboard from './components/pages/UmsDashboard';
+import Products from './components/pages/Products';
+import { CategoryProvider } from './components/contexts/CategoryContext';
+import { ProductProvider } from './components/contexts/ProductContext';
+
+
 
 function App() {
   return (
@@ -20,7 +26,11 @@ function App() {
               {/* Public Routes */}
               <Route index element={<Home />} />
               <Route path="auth" element={<LoginSignUp />} />
-              <Route path="/FeedbackForm" element={<FeedbackForm />} />
+              <Route path="products" element={
+                <ProductProvider>
+                  <Products />
+                </ProductProvider>
+              } />
 
               {/* Protected Routes */}
               <Route path='*' element={
@@ -35,6 +45,14 @@ function App() {
                   <AdminDashboard />
                 </AdminRoute>
               } />
+              <Route path="ums" element={
+                <AdminRoute>
+                  <UmsProvider>
+                    <UmsDashboard />
+                  </UmsProvider>
+                </AdminRoute>
+              } />
+
 
             </Route>
 

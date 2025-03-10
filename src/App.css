@@ -89,24 +89,15 @@
   padding: 0.5rem 1rem;
   border-radius: 25px;
   background: #f0f0f0;
-  font-family: 'Lucida Handwriting', cursive;
-  font-weight: bold;
-  color: #333;
-}
-
-.auth-button:hover {
-  background: rgba(0, 247, 255, 0.558);
-  transition: all 0.2s ease;
 }
 
 .feedback-button {
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
   border: none;
-  background: #333;
+  background: #007bff;
   color: white;
   cursor: pointer;
-  font-family: 'Lucida Handwriting', cursive;
 }
 
 .auth-button:hover,
@@ -136,8 +127,10 @@
 }
 
 .bite-box-logo {
-  font-weight: bold;
   font-family: 'Lucida Handwriting', cursive;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
 }
 
 .nav {
@@ -446,63 +439,127 @@
 /* Admin Dashboard styling ends */
 
 
-/* FeedbackForm Styling starts */
-.feedback-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
+/* Product page sytling starts */
 
-h2 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.feedback-form {
+#popular-product {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  max-width: 1000px;
+  margin: 80px auto;
 }
 
-input,
-select,
-textarea {
-  width: 95%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+.product-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-textarea {
-  resize: vertical;
-  min-height: 100px;
+.product-heading h3 {
+  font-size: 1.56rem;
+  font-weight: 700;
+  color: #202020;
+  letter-spacing: 0.5px;
 }
 
-.fbutton {
-  padding: 10px;
-  background: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+.product-heading span {
+  color: #a7a7a7;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  align-items: center;
+  margin: 40px 0px;
+  grid-template-columns: 1fr;
+}
+
+.product-container,
+.product-heading {
+  max-width: 1000px;
+  width: 100%;
+}
+
+
+.product-box img {
+  width: 90%;
+  height: 180px;
+  object-fit: contain;
+  object-position: center;
+  margin: auto;
+}
+
+.product-box {
+  width: 100%;
+  border: 1px solid #eeeeee;
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
 }
 
-.fbutton:hover {
-  background: #218838;
+.product-box strong {
+  color: #202020;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
-.success-message {
-  color: #28a745;
-  font-size: 18px;
-  font-weight: bold;
+.product-box .quantity {
+  color: #949494;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
-/* FeedbackForm Styling ends */
+.product-box .price {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #393939;
+}
+
+.product-box .cart-btn {
+  width: 100%;
+  height: 40px;
+  background-color: #ecf7ee;
+  color: #4eb060;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  transition: all ease 0.3s;
+  border-radius: 20px;
+}
+
+.product-box .cart-btn i {
+  margin-right: 10px;
+}
+
+.product-box .cart-btn:hover {
+  background-color: #4eb060;
+  color: #ffffff;
+  transition: all ease 0.3s;
+}
+
+.product-box .like-btn {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  color: #c9c9c9;
+  font-size: 1.3rem;
+}
+
+.like-btn:hover {
+  color: red;
+  cursor: pointer;
+}
+
+
+/* Product page sytling ends */

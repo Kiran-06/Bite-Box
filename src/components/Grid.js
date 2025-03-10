@@ -7,8 +7,7 @@ function Grid() {
         </div>
       ))}
     </div>
-  )
-}
-
+  );
+};
 
 export default Grid;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCategoryContext } from "./contexts/CategoryContext";
 import { useScroll } from "./contexts/ScrollContext";
 
@@ -31,10 +32,19 @@ function CategorySection() {
                     {
                         categories.map(
                             (category, index) => (
-                                <div className="category-box">
-                                    <img alt={category.category_name} src={category.image} />
-                                    <span>{category.category_name}</span>
-                                </div>
+                                <>
+                                    <Link to={{
+                                        pathname: '/products',
+                                        search: `?category=${category.category_name}`
+                                    }}>
+                                        <div className="category-box">
+                                            <img alt="Fruits and Vegetables" src={category.image} />
+                                            <span>{category.category_name}</span>
+                                        </div>
+                                    </Link>
+                                </>
+
+
                             )
                         )
                     }
