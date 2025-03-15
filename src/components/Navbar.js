@@ -17,7 +17,7 @@ function Navbar() {
                     <Link className="nav-item nav-admin" to="/admin">
                         ADMIN DASHBOARD
                     </Link>
-                    <Link className="nav-item nav-admin" to="/ums">
+                    <Link className="nav-item nav-user" to="/ums">
                         USER MANAGEMENT
                     </Link>
                 </>

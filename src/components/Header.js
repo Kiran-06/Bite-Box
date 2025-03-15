@@ -42,7 +42,7 @@ function Header() {
                             <FaShoppingCart />
                             <span className="cart-count">1</span>
                         </button>
-                        <span>Welcome: {user.firstName}</span>
+                        <span class="wel-name">Welcome: {user.firstName}</span>
                         <button className="auth-button" onClick={logout}>
                             <FaUser />
                             <span>Logout</span>
