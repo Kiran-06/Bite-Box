@@ -12,8 +12,9 @@
 
 // export default Grid;
 
-
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Deals } from "./pages/Deals";
 
 function Grid() {
   const [offers, setOffers] = useState([]);
@@ -40,13 +41,15 @@ function Grid() {
             <div key={offer.id} className="card">
               <h3>{offer.title}</h3>
               <p>Use Code: <strong>{offer.code}</strong></p>
-              <button className="claim-btn">Claim Now</button>
+              <Link to="/Deals">
+                <button className="claim-btn">Claim Now</button>
+              </Link>
             </div>
           ))
         ) : (
           <p>Loading latest offers...</p>
         )}
-      </div>
+      </div >
     </>
   );
 }
