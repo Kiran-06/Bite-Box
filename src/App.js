@@ -14,7 +14,9 @@ import Products from './components/pages/Products';
 import { CategoryProvider } from './components/contexts/CategoryContext';
 import { ProductProvider } from './components/contexts/ProductContext';
 import ProductDescription from './components/pages/ProductDescription';
-
+import FeedbackForm from './components/pages/Feedback';
+import FeedbackProvider from './components/contexts/FeedbackContext';
+import FeedbackList from './components/pages/FeedbackList';
 
 
 function App() {
@@ -27,6 +29,12 @@ function App() {
               {/* Public Routes */}
               <Route index element={<Home />} />
               <Route path="auth" element={<LoginSignUp />} />
+              <Route path="Feedback" element={
+                <FeedbackProvider>
+                  <FeedbackForm />
+                  <FeedbackList />
+                </FeedbackProvider>
+              } />
               <Route path="products" element={
                 <ProductProvider>
                   <Products />
