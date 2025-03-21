@@ -23,12 +23,12 @@ function Grid() {
   useEffect(() => {
     setTimeout(() => {
       setOffers([
-        { id: 1, title: "50% Off on Electronics", code: "ELEC50" },
-        { id: 2, title: "Buy 1 Get 1 Free - Fashion", code: "FASHB1G1" },
-        { id: 3, title: "Flat 30% Off on Groceries", code: "GROC30" },
-        { id: 4, title: "Travel Deals - 20% Off", code: "TRAVEL20" },
-        { id: 5, title: "Exclusive Mobile Discounts", code: "MOBILE15" },
-        { id: 6, title: "Weekend Special - 40% Off", code: "WEEKEND40" },
+        { id: 1, title: "20% off on Vegetables", code: "Veg50" },
+        { id: 2, title: "Buy 1 Get 1 Free", code: "FASHB1G1" },
+        { id: 3, title: "Flat 30% Off on Dairy", code: "Dairy30" },
+        { id: 4, title: "", code: "" },
+        { id: 5, title: "", code: "" },
+        { id: 6, title: "", code: "" },
       ]);
     }, 1000); // Simulating a delay
   }, []);

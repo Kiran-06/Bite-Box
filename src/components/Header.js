@@ -3,6 +3,7 @@ import logo from '../assets/logo.png';
 import { useAuth } from './contexts/AuthContext';
 import Navbar from './Navbar';
 import React from 'react';
+import FeedbackForm from './pages/Feedback';
 import { FaSearch, FaShoppingCart, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 
 
@@ -58,9 +59,10 @@ function Header() {
                             </button>
                         </Link>
 
-                        <button className="feedback-button">
+                        <Link to="/Feedback"><button className="feedback-button">
                             feedback
                         </button>
+                        </Link>
                     </>
 
                 )}
