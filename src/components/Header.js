@@ -45,7 +45,7 @@ function Header() {
                         </button>
                         </Link>
                         <span class="wel-name">Welcome: {user.firstName}</span>
-                        <button className="auth-button" onClick={logout}>
+                        <button className="logout-auth-button" onClick={logout}>
                             <FaUser />
                             <span>Logout</span>
                         </button>
@@ -54,7 +54,7 @@ function Header() {
 
                     <>
                         <Link to="/auth">
-                            <button className="auth-button" >
+                            <button className="login-auth-button" >
                                 <FaUser />
                                 <span>Login/Signup</span>
                             </button>

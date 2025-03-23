@@ -1,39 +1,32 @@
-// function LeftSidebar(){
-//     return(
-//     <div className="sidebar">
-//         <div className="help-section">
-//             <h3>Need Help?</h3>
-//         </div>
-//     </div>
-//     )
-// }
-
-// export default LeftSidebar;
-
-
 import { useState } from "react";
-import { FiHelpCircle, FiMessageSquare, FiPhone, FiChevronLeft } from "react-icons/fi";
+import { FiHelpCircle, FiMessageSquare, FiPhone } from "react-icons/fi";
 
-function LeftSidebar() {
-    const [collapsed, setCollapsed] = useState(false);
+function HelpSidebar() {
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <div className="sidebar">
+        <div
+            className={`help-sidebar ${isHovered ? "expanded" : ""}`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <div className="help-btn">
+                <span>Need Help?</span>
+            </div>
 
-            <div className="help-section">
-                <h3>Need Help?</h3>
+            <div className="help-options">
                 <ul>
                     <li>
-                        <FiHelpCircle className="icon" />
-                        <a href="#">FAQs</a>
+                        <FiHelpCircle className="menu-icon" />
+                        <span>FAQs</span>
                     </li>
                     <li>
-                        <FiPhone className="icon" />
-                        <a href="#">Contact Support</a>
+                        <FiPhone className="menu-icon" />
+                        <span>Contact Us</span>
                     </li>
                     <li>
-                        <FiMessageSquare className="icon" />
-                        <a href="#">Live Chat</a>
+                        <FiMessageSquare className="menu-icon" />
+                        <span>Live Chat</span>
                     </li>
                 </ul>
             </div>
@@ -41,5 +34,4 @@ function LeftSidebar() {
     );
 }
 
-export default LeftSidebar;
-
+export default HelpSidebar;

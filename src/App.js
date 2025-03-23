@@ -57,6 +57,11 @@ function App() {
                 <Route path="cart" element={<Cart />} />
 
                 {/* Protected Routes */}
+                <Route path="cart" element={
+                  <ProtectedRoute>
+                    <Cart />
+                  </ProtectedRoute>
+                } />
                 <Route path='*' element={
                   <ProtectedRoute>
                     <NoPage />

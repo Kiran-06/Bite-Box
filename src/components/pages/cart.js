@@ -22,12 +22,12 @@ const Cart = () => {
                                 <h3>{item.product_name}</h3>
                                 <p>Price: ${item.product_price}</p>
                                 <p>Quantity: {item.quantity}</p>
-                                <p>Subtotal: ${item.product_price * item.quantity}</p>
+                                <p>Total: ${(item.product_price * item.quantity).toFixed(2)}</p>
                                 <button onClick={() => removeFromCart(item.id)}>Remove</button>
                             </div>
                         </div>
                     ))}
-                    <h3>Total: ${totalPrice.toFixed(2)}</h3>
+                    <h3>Grand Total: ${totalPrice.toFixed(2)}</h3>
                     <button onClick={clearCart}>Clear Cart</button>
                     <Link to="/products" className="cart-btn">🛒 Continue Shopping</Link>
                 </>

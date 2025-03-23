@@ -11,9 +11,6 @@ function Products() {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const { addToCart } = useCart();
 
-    // Store selected quantities
-    const [quantities, setQuantities] = useState({});
-
     // Filter products based on category
     useEffect(() => {
         if (category) {
@@ -26,18 +23,17 @@ function Products() {
         }
     }, [category, products]);
 
-    // Handle quantity change
-    const handleQuantityChange = (productId, quantity) => {
-        setQuantities((prevQuantities) => ({
-            ...prevQuantities,
-            [productId]: quantity,
-        }));
-    };
-
-    // Handle adding product to cart with selected quantity
+    // Function to handle adding product with quantity
     const handleAddToCart = (product) => {
-        const quantity = quantities[product.id] || 1;  // Default to 1 if not selected
-        addToCart({ ...product, quantity });
+        const quantity = parseInt(prompt(`Enter quantity for ${product.product_name}:`, "1"));
+
+        if (!quantity || quantity <= 0) {
+            alert("Please enter a valid quantity!");
+            return;
+        }
+
+        const productWithQuantity = { ...product, quantity };
+        addToCart(productWithQuantity);
         alert(`${product.product_name} added to cart with quantity: ${quantity}`);
     };
 
@@ -52,7 +48,7 @@ function Products() {
                 <div className="product-container">
 
                     {filteredProducts.map((product) => (
-                        <div className="product-box" key={product.id}>
+                        <div className="product-box" key={product.id}>  {/* ✅ Add unique key */}
 
                             <Link to={`/productdesc/${product.id}`}>
                                 <img alt={product.product_name} src={product.image} />
@@ -61,19 +57,7 @@ function Products() {
                                 <span className="price">$ {product.product_price}</span>
                             </Link>
 
-                            {/* ✅ Quantity Selector */}
-                            <div className="quantity-selector">
-                                <label>Quantity:</label>
-                                <input
-                                    type="number"
-                                    min="1"
-                                    value={quantities[product.id] || 1}
-                                    onChange={(e) => handleQuantityChange(product.id, parseInt(e.target.value))}
-                                    className="quantity-input"
-                                />
-                            </div>
-
-                            {/* ✅ Add to Cart with quantity */}
+                            {/* ✅ Prompt for quantity before adding to cart */}
                             <button
                                 className="cart-btn"
                                 onClick={() => handleAddToCart(product)}
