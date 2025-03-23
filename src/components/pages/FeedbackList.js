@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FeedbackContext } from "./components/contexts/FeedbackContext";
+import { FeedbackContext } from '../contexts/FeedbackContext';
 
 const FeedbackList = () => {
     const { feedbackList } = useContext(FeedbackContext);

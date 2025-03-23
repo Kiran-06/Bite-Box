@@ -932,3 +932,44 @@ textarea {
 }
 
 /*FeedbackForm styling ends*/
+
+/* Cart Page Styling Starts*/
+.cart-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.cart-item img {
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
+}
+
+button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Cart Page Styling Ends*/

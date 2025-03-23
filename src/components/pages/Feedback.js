@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import FeedbackContext from "../contexts/FeedbackContext";
+import { FeedbackContext } from '../contexts/FeedbackContext';
 
 
 const FeedbackForm = () => {
@@ -85,11 +85,11 @@ const FeedbackForm = () => {
                         required
                     >
                         <option value="">Select a rating</option>
-                        <option value="5">⭐️⭐️⭐️⭐️⭐️ (Excellent)</option>
-                        <option value="4">⭐️⭐️⭐️⭐️ (Good)</option>
-                        <option value="3">⭐️⭐️⭐️ (Average)</option>
-                        <option value="2">⭐️⭐️ (Below Average)</option>
-                        <option value="1">⭐️ (Poor)</option>
+                        <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+                        <option value="4">⭐⭐⭐⭐ (Good)</option>
+                        <option value="3">⭐⭐⭐ (Average)</option>
+                        <option value="2">⭐⭐ (Below Average)</option>
+                        <option value="1">⭐ (Poor)</option>
                     </select>
 
                     <textarea

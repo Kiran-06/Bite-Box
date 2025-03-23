@@ -15,67 +15,74 @@ import { CategoryProvider } from './components/contexts/CategoryContext';
 import { ProductProvider } from './components/contexts/ProductContext';
 import ProductDescription from './components/pages/ProductDescription';
 import FeedbackForm from './components/pages/Feedback';
-import FeedbackProvider from './components/contexts/FeedbackContext';
+import { FeedbackProvider } from './components/contexts/FeedbackContext';
 import FeedbackList from './components/pages/FeedbackList';
-
+import Cart from './components/pages/cart';
+import { CartProvider } from './components/contexts/CartContext';
 
 function App() {
   return (
     <div className="app">
       <AuthProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              {/* Public Routes */}
-              <Route index element={<Home />} />
-              <Route path="auth" element={<LoginSignUp />} />
-              <Route path="Feedback" element={
-                <FeedbackProvider>
-                  <FeedbackForm />
-                  <FeedbackList />
-                </FeedbackProvider>
-              } />
-              <Route path="products" element={
-                <ProductProvider>
-                  <Products />
-                </ProductProvider>
-              } />
-              <Route path="productdesc/:productId" element={
-                <ProductProvider>
-                  <ProductDescription />
-                </ProductProvider>
-              } />
+        <CartProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout />}>
 
-              {/* Protected Routes */}
-              <Route path='*' element={
-                <ProtectedRoute>
-                  <NoPage />
-                </ProtectedRoute>
-              }></Route>
+                {/* Public Routes */}
+                <Route index element={<Home />} />
+                <Route path="auth" element={<LoginSignUp />} />
 
-              {/*Admin Routes */}
-              <Route path="admin" element={
-                <AdminRoute>
-                  <AdminDashboard />
-                </AdminRoute>
-              } />
-              <Route path="ums" element={
-                <AdminRoute>
-                  <UmsProvider>
-                    <UmsDashboard />
-                  </UmsProvider>
-                </AdminRoute>
-              } />
+                <Route path="Feedback" element={
+                  <FeedbackProvider>
+                    <FeedbackForm />
+                    <hr />
+                    <FeedbackList />
+                  </FeedbackProvider>
+                } />
 
+                <Route path="products" element={
+                  <ProductProvider>
+                    <Products />
+                  </ProductProvider>
+                } />
 
-            </Route>
+                <Route path="productdesc/:productId" element={
+                  <ProductProvider>
+                    <ProductDescription />
+                  </ProductProvider>
+                } />
 
+                {/* Cart Route */}
+                <Route path="cart" element={<Cart />} />
 
-          </Routes>
-        </BrowserRouter>
+                {/* Protected Routes */}
+                <Route path='*' element={
+                  <ProtectedRoute>
+                    <NoPage />
+                  </ProtectedRoute>
+                } />
+
+                {/* Admin Routes */}
+                <Route path="admin" element={
+                  <AdminRoute>
+                    <AdminDashboard />
+                  </AdminRoute>
+                } />
+
+                <Route path="ums" element={
+                  <AdminRoute>
+                    <UmsProvider>
+                      <UmsDashboard />
+                    </UmsProvider>
+                  </AdminRoute>
+                } />
+
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </CartProvider>
       </AuthProvider>
-
-
     </div>
   );
 }

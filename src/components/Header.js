@@ -39,10 +39,11 @@ function Header() {
 
                 {user ? (
                     <>
-                        <button className="cart-button">
+                        <Link to="/cart"><button className="cart-button">
                             <FaShoppingCart />
                             <span className="cart-count">1</span>
                         </button>
+                        </Link>
                         <span class="wel-name">Welcome: {user.firstName}</span>
                         <button className="auth-button" onClick={logout}>
                             <FaUser />

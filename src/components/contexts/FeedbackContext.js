@@ -1,4 +1,4 @@
-import React, { useContext, createContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 // Create context
 const FeedbackContext = createContext();
@@ -30,6 +30,8 @@ const FeedbackProvider = ({ children }) => {
     );
 };
 
-export default FeedbackProvider;
+// Export as named exports
+export { FeedbackProvider, FeedbackContext };
 
+// Custom hook to use FeedbackContext
 export const useFeedback = () => useContext(FeedbackContext);
