@@ -11,7 +11,8 @@ function HelpSidebar() {
             onMouseLeave={() => setIsHovered(false)}
         >
             <div className="help-btn">
-                <span>Need Help?</span>
+                <span>?</span>
+
             </div>
 
             <div className="help-options">

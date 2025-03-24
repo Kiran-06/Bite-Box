@@ -201,7 +201,9 @@
 
 .nav-home:hover,
 .nav-deals:hover,
-.nav-cat:hover {
+.nav-cat:hover,
+.nav-admin:hover,
+.nav-user:hover {
 
   font-size: 16px;
   color: #0056b3;
@@ -305,7 +307,7 @@
   border-radius: 12px 0 0 12px;
   overflow: hidden;
   transition: width 0.4s ease;
-  z-index: 1000;
+  z-index: 1;
 }
 
 /* Expand sidebar on hover */
@@ -413,10 +415,26 @@ li:hover span {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* Always 3 columns per row */
+  /* 3 columns per row */
   gap: 20px;
-  padding: 30px;
+  max-width: 1200px;
+  /* Set max width to avoid stretching on larger screens */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grid-wrapper {
+  display: flex;
+  justify-content: center;
+  /* Horizontally center */
+  align-items: center;
+  /* Vertically center */
+  min-height: 100vh;
+  /* Full viewport height */
   background: #f5f5f5;
+  padding: 30px;
+  margin-left: 250px;
+  box-sizing: border-box;
 }
 
 /* Card Styling */
@@ -507,6 +525,20 @@ p {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns per row */
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    /* 1 column per row */
   }
 }
 
@@ -1035,3 +1067,123 @@ button:hover {
 }
 
 /* Cart Page Styling Ends*/
+
+
+/* Footer Styling Starts */
+/* Footer Container */
+.footer {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Footer Sections */
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* Logo Styling */
+.footer-logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.footer-logo span {
+  color: #00aaff;
+}
+
+/* Social Media Links */
+.footer-social {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #ccc;
+  font-size: 22px;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #00aaff;
+}
+
+/* Footer Links */
+.footer h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin: 10px 0;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+  color: #00aaff;
+}
+
+/* Contact Section */
+.footer-contact a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+  color: #00aaff;
+}
+
+/* Copyright Section */
+.footer-copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    min-width: 100%;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+/*Footer Styling Ends*/
