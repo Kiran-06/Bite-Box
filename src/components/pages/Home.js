@@ -1,6 +1,6 @@
 import { CategoryProvider } from "../contexts/CategoryContext";
 import CategorySection from "../CategorySection";
-import Grid from "../Grid";
+import EnduserGridView from "./EnduserGridView";
 import LeftSidebar from "../LeftSidebar";
 import Footer from "./footer";
 import PromoBanner from "../PromoBanner";
@@ -15,7 +15,7 @@ function Home() {
             {/* Main Content */}
             <main style={{ display: "flex", flex: "1" }}>
                 <LeftSidebar />
-                <Grid />
+                <EnduserGridView />
             </main>
 
             {/* Category Section */}
