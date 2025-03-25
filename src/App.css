@@ -1380,3 +1380,87 @@ button:hover {
 }
 
 /* Admin Grid Styling Ends*/
+
+
+/* Admin Dashboard payment details Styling starts */
+/* Admin Dashboard Container */
+.admin-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Heading Styling */
+.admin-dashboard h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* No Records Message */
+.admin-dashboard p {
+  text-align: center;
+  font-size: 18px;
+  color: #ff4d4f;
+  margin-top: 20px;
+}
+
+/* Table Styling */
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Header */
+.admin-dashboard th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+/* Table Cells */
+.admin-dashboard td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternating Row Colors */
+.admin-dashboard tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover Effect */
+.admin-dashboard tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: 0.3s;
+}
+
+/* Payment Items */
+.admin-dashboard td div {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .admin-dashboard table {
+    font-size: 14px;
+  }
+
+  .admin-dashboard th,
+  .admin-dashboard td {
+    padding: 10px;
+  }
+}
+
+/* Admin Dashboard Payment Details Styling Ends */
