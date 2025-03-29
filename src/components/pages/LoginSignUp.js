@@ -74,7 +74,7 @@ const LoginSignUp = () => {
           <input required type="password" placeholder="Confirm Password"
             onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })} />
         )}
-        <button type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
+        <button type="submit" classname="login-btn">{isLogin ? 'Login' : 'Sign Up'}</button>
       </form>
       <button onClick={() => setIsLogin(!isLogin)}>
         {isLogin ? 'Create new account' : 'Already have an account?'}

@@ -1,25 +1,25 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Create Context
 const PaymentContext = createContext();
-
-// Hook for easy access
-export const usePayment = () => useContext(PaymentContext);
 
 export const PaymentProvider = ({ children }) => {
     const [payments, setPayments] = useState([]);
 
-    // Load payments from local storage on component mount
     useEffect(() => {
-        const storedPayments = JSON.parse(localStorage.getItem("payments")) || [];
-        setPayments(storedPayments);
+        const savedPayments = localStorage.getItem("payments");
+        if (savedPayments) {
+            setPayments(JSON.parse(savedPayments));
+        }
     }, []);
 
-    // Save payments to local storage
+    const savePaymentsToLocalStorage = (data) => {
+        localStorage.setItem("payments", JSON.stringify(data));
+    };
+
     const addPayment = (payment) => {
         const updatedPayments = [...payments, payment];
         setPayments(updatedPayments);
-        localStorage.setItem("payments", JSON.stringify(updatedPayments));
+        savePaymentsToLocalStorage(updatedPayments);
     };
 
     return (
@@ -27,4 +27,12 @@ export const PaymentProvider = ({ children }) => {
             {children}
         </PaymentContext.Provider>
     );
+};
+
+export const usePayment = () => {
+    const context = useContext(PaymentContext);
+    if (!context) {
+        throw new Error("usePayment must be used within a PaymentProvider");
+    }
+    return context;
 };

@@ -22,93 +22,102 @@ import { CartProvider } from './components/contexts/CartContext';
 import Checkout from './components/pages/CheckoutPage';
 import Payment from './components/pages/Payment';
 import { PaymentProvider } from './components/contexts/PaymentContext';
+import Success from './components/pages/Success';
+import Deals from './components/pages/Deals';
+import ItemPage from './components/pages/ItemPage';
 
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
         <AuthProvider>
-          <CartProvider>
-            <PaymentProvider>
+          <UmsProvider>
+            <CartProvider>
+              <PaymentProvider>
 
-              <Routes>
-                <Route path="/" element={<Layout />}>
+                <Routes>
+                  <Route path="/" element={<Layout />}>
 
-                  {/* Public Routes */}
-                  <Route index element={<Home />} />
-                  <Route path="auth" element={<LoginSignUp />} />
+                    {/* Public Routes */}
+                    <Route index element={<Home />} />
+                    <Route path="/Deals" element={<Deals />} />
+                    <Route path="auth" element={<LoginSignUp />} />
 
-                  <Route path="Feedback" element={
-                    <FeedbackProvider>
-                      <FeedbackForm />
-                      <hr />
-                      <FeedbackList />
-                    </FeedbackProvider>
-                  } />
+                    <Route path="/item/:id" element={
+                      <ItemPage />
+                    } />
 
-                  <Route path="products" element={
-                    <ProductProvider>
-                      <Products />
-                    </ProductProvider>
-                  } />
+                    <Route path="Feedback" element={
+                      <FeedbackProvider>
+                        <FeedbackForm />
+                        <hr />
+                        <FeedbackList />
+                      </FeedbackProvider>
+                    } />
 
-                  <Route path="productdesc/:productId" element={
-                    <ProductProvider>
-                      <ProductDescription />
-                    </ProductProvider>
-                  } />
+                    <Route path="products" element={
 
-                  {/* Cart Route */}
-                  <Route path="cart" element={
-                    <ProtectedRoute>
-                      <Cart />
-                    </ProtectedRoute>
-                  } />
-                  <Route path="CheckoutPage" element={
-                    <ProtectedRoute>
-                      <Checkout />
-                    </ProtectedRoute>
-                  } />
-                  <Route path="Payment" element={
-                    <ProtectedRoute>
-                      <Payment />
-                    </ProtectedRoute>
-                  } />
+                      <ProductProvider>
+                        <Products />
+                      </ProductProvider>
 
-                  {/* Protected Routes */}
-                  <Route path="cart" element={
-                    <ProtectedRoute>
-                      <Cart />
-                    </ProtectedRoute>
-                  } />
-                  <Route path='*' element={
-                    <ProtectedRoute>
-                      <NoPage />
-                    </ProtectedRoute>
-                  } />
+                    } />
 
-                  {/* Admin Routes */}
-                  <Route path="admin" element={
-                    <ProtectedRoute>
+                    <Route path="productdesc/:productId" element={
+                      <ProductProvider>
+                        <ProductDescription />
+                      </ProductProvider>
+                    } />
+
+                    {/* Cart Route */}
+                    <Route path="cart" element={
+                      <ProtectedRoute>
+                        <Cart />
+                      </ProtectedRoute>
+                    } />
+
+                    <Route path="CheckoutPage" element={
+                      <ProtectedRoute>
+                        <Checkout />
+                      </ProtectedRoute>
+                    } />
+                    <Route path="Payment" element={
+                      <ProtectedRoute>
+                        <Payment />
+                      </ProtectedRoute>
+                    } />
+                    <Route path="success" element={<Success />} />
+
+                    {/* Protected Routes */}
+                    <Route path="cart" element={
+                      <ProtectedRoute>
+                        <Cart />
+                      </ProtectedRoute>
+                    } />
+
+                    <Route path='*' element={<NoPage />} />
+
+                    {/* Admin Routes */}
+                    <Route path="admin" element={
                       <AdminRoute>
                         <AdminDashboard />
                       </AdminRoute>
-                    </ProtectedRoute>
-                  } />
+                    } />
 
-                  <Route path="ums" element={
-                    <AdminRoute>
-                      <UmsProvider>
-                        <UmsDashboard />
-                      </UmsProvider>
-                    </AdminRoute>
-                  } />
+                    <Route path="ums" element={
+                      <AdminRoute>
+                        <UmsProvider>
+                          <UmsDashboard />
+                        </UmsProvider>
+                      </AdminRoute>
+                    } />
 
-                </Route>
-              </Routes>
+                  </Route>
+                </Routes>
 
-            </PaymentProvider>
-          </CartProvider>
+              </PaymentProvider>
+            </CartProvider>
+          </UmsProvider>
         </AuthProvider>
       </BrowserRouter>
     </div>
