@@ -4,7 +4,7 @@
 
 
 /* header component styling  starts*/
-/* 🌟 Header Container */
+/* Header Container */
 .header {
   display: flex;
   justify-content: space-between;
@@ -19,7 +19,7 @@
   z-index: 1000;
 }
 
-/* 🌟 Logo Section */
+/*  Logo Section */
 .header-left {
   display: flex;
   align-items: center;
@@ -49,8 +49,12 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+.bite-box-logo:hover {
+  color: #c0392b;
+  transform: scale(1.1);
+}
 
-/* 🌟 Navbar */
+/* Navbar */
 .navbar {
   display: flex;
   gap: 20px;
@@ -68,7 +72,7 @@
   /* Gold color on hover */
 }
 
-/* 🌟 Navbar Container */
+/* Navbar Container */
 .nav {
   display: flex;
   align-items: center;
@@ -80,7 +84,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* 🌟 Navigation Links */
+/* Navigation Links */
 .nav-item {
   color: #fff;
   text-decoration: none;
@@ -90,20 +94,20 @@
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* 🔥 Hover Effects */
+/* Hover Effects */
 .nav-item:hover {
   color: #FFD700;
   /* Gold color */
   transform: scale(1.1);
 }
 
-/* 🌟 Active State */
+/* Active State */
 .nav-item:active {
   color: #f39c12;
   /* Orange */
 }
 
-/* 🎯 Special Styling for Admin and User Links */
+/* Special Styling for Admin and User Links */
 .nav-admin,
 .nav-user {
   background: #e74c3c;
@@ -120,7 +124,7 @@
   transform: scale(1.05);
 }
 
-/* 🌟 Responsive Design */
+/*  Responsive Design */
 @media screen and (max-width: 1024px) {
   .nav {
     flex-direction: column;
@@ -152,7 +156,7 @@
 
 /* navbar styling ends */
 
-/* 🌟 Search Container */
+/*  Search Container */
 .header-middle {
   display: flex;
   align-items: center;
@@ -190,14 +194,14 @@
   background: #45a049;
 }
 
-/* 🌟 Header Right Section */
+/* Header Right Section */
 .header-right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* 🌟 Cart & Auth Buttons */
+/*  Cart & Auth Buttons */
 .cart-button,
 .login-auth-button,
 .logout-auth-button,
@@ -221,11 +225,12 @@
 .logout-auth-button:hover,
 .feedback-button:hover {
   background: #2c3e50;
+  color:#FFD700;
   /* Darker gold */
   transform: scale(1.05);
 }
 
-/* 🌟 Cart Count Badge */
+/* Cart Count Badge */
 .cart-count {
   background: #e74c3c;
   /* Red badge */
@@ -236,24 +241,14 @@
   margin-left: 5px;
 }
 
-/* 🌟 Welcome User Name */
+/*  Welcome User Name */
 .wel-name {
   font-size: 18px;
   font-weight: bold;
   color: #fff;
 }
 
-/* 🌟 Feedback Button */
-.feedback-button {
-  background: #2c3e50;
-  color: #fff;
-}
-
-.feedback-button:hover {
-  background: #e67e22;
-}
-
-/* 🌟 Responsive Design */
+/*  Responsive Design */
 @media screen and (max-width: 1024px) {
   .header {
     flex-direction: column;
@@ -660,7 +655,7 @@ p {
 
 
 /* Login & SignUp component styling starts */
-/* 🌟 Main Container */
+/* Main Container */
 .auth-container {
   max-width: 450px;
   margin: 60px auto;
@@ -677,7 +672,7 @@ p {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* 🌟 Form Heading */
+/*  Form Heading */
 h2 {
   text-align: center;
   color: #2c3e50;
@@ -685,7 +680,7 @@ h2 {
   margin-bottom: 25px;
 }
 
-/* 🌟 Input Fields */
+/*  Input Fields */
 form input {
   width: 100%;
   padding: 12px 15px;
@@ -702,7 +697,7 @@ form input:focus {
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
 }
 
-/* 🌟 Button Styling */
+/*  Button Styling */
 button {
   width: 100%;
   padding: 12px 25px;
@@ -725,7 +720,7 @@ button:active {
   background: #3e8e41;
 }
 
-/* 🌟 Toggle Button */
+/*  Toggle Button */
 .auth-container>button {
   background: transparent;
   color: #4caf50;
@@ -741,7 +736,7 @@ button:active {
   color: #ffffff;
 }
 
-/* 🌟 Responsive Design */
+/*  Responsive Design */
 @media screen and (max-width: 768px) {
   .auth-container {
     width: 90%;
@@ -1062,7 +1057,7 @@ button:active {
 /* Product Description page styling ends' */
 
 /*FeedbackForm page styling starts*/
-/* 🌟 Feedback Container */
+/* Feedback Container */
 .feedback-container {
   max-width: 600px;
   margin: 50px auto;
@@ -1079,7 +1074,7 @@ button:active {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* 🌟 Form Heading */
+/*  Form Heading */
 h2 {
   text-align: center;
   color: #2c3e50;
@@ -1087,7 +1082,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* 🌟 Input Fields */
+/* Input Fields */
 input,
 select,
 textarea {
@@ -1108,18 +1103,18 @@ textarea:focus {
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
 }
 
-/* 🌟 Dropdown Styling */
+/*  Dropdown Styling */
 select {
   cursor: pointer;
 }
 
-/* 🌟 Textarea */
+/*  Textarea */
 textarea {
   height: 150px;
   resize: none;
 }
 
-/* 🌟 Button Styling */
+/*  Button Styling */
 .fbutton {
   width: 100%;
   padding: 12px 25px;
@@ -1138,7 +1133,7 @@ textarea {
   transform: scale(1.05);
 }
 
-/* 🌟 Success Message */
+/*  Success Message */
 .success-message {
   text-align: center;
   color: #4caf50;
@@ -1148,7 +1143,7 @@ textarea {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* 🌟 Responsive Design */
+/*  Responsive Design */
 @media screen and (max-width: 768px) {
   .feedback-container {
     width: 90%;
@@ -1156,7 +1151,7 @@ textarea {
   }
 }
 
-/* 🌟 Animations */
+/*  Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1172,7 +1167,7 @@ textarea {
 /*FeedbackForm styling ends*/
 
 /* Cart Page Styling Starts*/
-/* 🌟 Cart Container */
+/*  Cart Container */
 .cart-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1185,7 +1180,7 @@ textarea {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* 🛒 Cart Item Styling */
+/*  Cart Item Styling */
 .cart-item {
   background: #ffffff;
   border-radius: 12px;
@@ -1203,7 +1198,7 @@ textarea {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* 🖼️ Product Image */
+/* Product Image */
 .cart-image {
   width: 150px;
   height: 150px;
@@ -1216,7 +1211,7 @@ textarea {
   transform: scale(1.05);
 }
 
-/* 📋 Cart Details */
+/*  Cart Details */
 .cart-details {
   display: flex;
   flex-direction: column;
@@ -1236,7 +1231,7 @@ textarea {
   color: #555;
 }
 
-/* 🛑 Cart Buttons */
+/*  Cart Buttons */
 .carting-btn {
   background: #27ae60;
   color: #fff;
@@ -1257,7 +1252,7 @@ textarea {
   transform: scale(1.05);
 }
 
-/* 🛒 Cart Actions */
+/*  Cart Actions */
 .cart-actions {
   display: flex;
   justify-content: space-between;
@@ -1273,14 +1268,14 @@ textarea {
   max-width: 300px;
 }
 
-/* 🎯 Empty Cart Message */
+/*  Empty Cart Message */
 p {
   text-align: center;
   font-size: 20px;
   color: #555;
 }
 
-/* 🌟 Responsive Design */
+/*  Responsive Design */
 @media (max-width: 768px) {
   .cart-container {
     grid-template-columns: 1fr;
@@ -1968,69 +1963,96 @@ p {
 
 /* Success Page Styling Ends*/
 
-/*Deals page Styling Starts*/
-/* 🌟 Deals Page Container */
+/* Deals page Styling Starts*/
+/* Deals Page Container */
 .deals-container {
   padding: 60px 30px;
-  max-width: 1200px;
+  max-width: 1000px;  /* Adjusted max width for a more compact container */
   margin: 0 auto;
   text-align: center;
 }
 
-.deals-container h1 {
-  font-size: 42px;
-  color: #2c3e50;
-  margin-bottom: 40px;
-}
-
-/* 🎯 Deals Grid Layout */
+/*  Deals Grid Layout */
 .deals-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced min width for smaller cards */
+  gap: 20px; /* More compact grid gap */
   justify-content: center;
 }
 
-/* 🔥 Deal Card */
+/*  Deal Card */
 .deal-card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Slightly smaller border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s;
   overflow: hidden;
+  width: 100%; /* Ensures the card does not stretch */
+  max-width: 280px; /* Reduced card max-width */
+  margin: auto; /* Centers the card in the grid */
+  padding: 12px; /* Smaller padding for compactness */
 }
 
 .deal-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft hover effect */
 }
 
+/*  Deal Image */
 .deal-image {
   width: 100%;
-  height: 200px;
+  height: 150px; /* Reduced height */
   object-fit: cover;
+  border-radius: 8px;
 }
 
-/* 🎯 Deal Details */
+/*  Deal Details */
 .deal-card h3 {
-  font-size: 22px;
+  font-size: 18px; /* Slightly smaller title */
   color: #34495e;
-  margin: 15px 0 10px;
+  margin: 8px 0 5px;
 }
 
 .deal-card p {
-  font-size: 18px;
+  font-size: 14px; /* Smaller font for text */
   color: #2c3e50;
-  margin: 5px 0;
+  margin: 4px 0;
 }
 
-/* 🔥 Discount Styling */
+/*  Responsive Tweaks */
+@media (max-width: 768px) {
+  .deals-container {
+    padding: 40px 20px;
+  }
+
+  .deals-grid {
+    gap: 15px; /* Less gap on smaller screens */
+  }
+
+  .deal-card {
+    max-width: 100%; /* Allows cards to be responsive and fit screen */
+  }
+
+  .deal-image {
+    height: 130px; /* Adjust image height for smaller screens */
+  }
+
+  .deal-card h3 {
+    font-size: 16px; /* Adjust title font for smaller screens */
+  }
+
+  .deal-card p {
+    font-size: 12px; /* Adjust text font for smaller screens */
+  }
+}
+
+/*  Discount Styling */
 .discount {
   font-weight: bold;
   color: #e74c3c;
 }
 
-/* 🛒 Add to Cart Button */
+/*  Add to Cart Button */
 .add-to-cart-btn {
   background: #27ae60;
   color: #fff;
@@ -2050,7 +2072,7 @@ p {
   background: #2ecc71;
 }
 
-/* 🌟 Responsive Design */
+/*  Responsive Design */
 @media (max-width: 768px) {
   .deals-container {
     padding: 40px 20px;
@@ -2065,7 +2087,7 @@ p {
 
 
 /* SearchBarStyling Starts*/
-/* 🌟 Search Bar Styling */
+/*  Search Bar Styling */
 .search-bar {
   display: flex;
   align-items: center;
@@ -2103,7 +2125,7 @@ p {
   background-color: #219653;
 }
 
-/* 🌟 Item Page */
+/*  Item Page */
 .item-page {
   text-align: center;
   margin: 40px;
@@ -2120,7 +2142,7 @@ p {
 
 
 /* ItemPage Styles Start*/
-/* ✅ Item Page Styling */
+/*  Item Page Styling */
 .item-page {
   max-width: 800px;
   margin: 40px auto;
@@ -2149,7 +2171,7 @@ p {
   border-radius: 8px;
 }
 
-/* ✅ Quantity Selector */
+/*  Quantity Selector */
 .quantity-container {
   display: flex;
   justify-content: center;
@@ -2179,7 +2201,7 @@ p {
   outline: none;
 }
 
-/* ✅ Add to Cart Button */
+/*  Add to Cart Button */
 .add-to-cart-btn {
   background: #28a745;
   color: white;
