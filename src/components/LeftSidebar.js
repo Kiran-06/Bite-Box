@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiHelpCircle, FiMessageSquare, FiPhone } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 function HelpSidebar() {
     const [isHovered, setIsHovered] = useState(false);
@@ -11,23 +12,22 @@ function HelpSidebar() {
             onMouseLeave={() => setIsHovered(false)}
         >
             <div className="help-btn">
-                <span>?</span>
-
+                <FiHelpCircle className="menu-icon" />
             </div>
 
             <div className="help-options">
                 <ul>
                     <li>
                         <FiHelpCircle className="menu-icon" />
-                        <span>FAQs</span>
+                        <Link to="/faq">FAQs</Link>
                     </li>
                     <li>
                         <FiPhone className="menu-icon" />
-                        <span>Contact Us</span>
+                        <Link to="/ContactUs">Contact Us</Link>
                     </li>
                     <li>
                         <FiMessageSquare className="menu-icon" />
-                        <span>Live Chat</span>
+                        <Link to="/LiveChat">Live Chat</Link>
                     </li>
                 </ul>
             </div>

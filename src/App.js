@@ -25,6 +25,9 @@ import { PaymentProvider } from './components/contexts/PaymentContext';
 import Success from './components/pages/Success';
 import Deals from './components/pages/Deals';
 import ItemPage from './components/pages/ItemPage';
+import FAQ from './components/pages/FAQ';
+import ContactUs from './components/pages/ContactUs';
+import LiveChat from './components/pages/LiveChat';
 
 function App() {
   return (
@@ -111,6 +114,11 @@ function App() {
                         </UmsProvider>
                       </AdminRoute>
                     } />
+
+                    <Route path="/FAQ" element={<FAQ />} />
+                    <Route path="/ContactUS" element={<ContactUs />} />
+                    <Route path="/LiveChat" element={<LiveChat />} />
+
 
                   </Route>
                 </Routes>

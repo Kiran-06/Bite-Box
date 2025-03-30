@@ -120,8 +120,10 @@ function Header() {
         <header className="header">
             <div className='header-left'>
                 <div className="logo">
+                    <Link to="/">
                         <img src={logo} alt="Site Logo" className="logo-img" />
                         <span className="bite-box-logo">BITE BOX</span>
+                    </Link>
                 </div>
                 <Navbar />
             </div>

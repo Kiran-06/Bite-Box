@@ -48,7 +48,14 @@
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-decoration: none;
 }
+
+.bite-box-logo:hover {
+  color: #c0392b;
+  transform: scale(1.1);
+}
+
 .bite-box-logo:hover {
   color: #c0392b;
   transform: scale(1.1);
@@ -225,7 +232,8 @@
 .logout-auth-button:hover,
 .feedback-button:hover {
   background: #2c3e50;
-  color:#FFD700;
+  color: #FFD700;
+  color: #FFD700;
   /* Darker gold */
   transform: scale(1.05);
 }
@@ -313,123 +321,239 @@
 /* home component styling ends */
 
 /* left sidebar styling starts */
+/* Sidebar Styles */
 /* Sidebar container */
 .help-sidebar {
   position: fixed;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-
-  background: #2c3e50;
-  /* Dark slate background */
-  color: #ecf0f1;
-  /* Light text color */
-  width: 70px;
-  /* Collapsed by default */
-  height: auto;
-
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 12px 0 0 12px;
+  background: #3498db;
+  color: white;
+  width: 60px;
+  /* Initially small width */
+  height: 200px;
+  transition: width 0.3s, box-shadow 0.3s;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
   overflow: hidden;
-  transition: width 0.4s ease;
-  z-index: 1;
+  /* Hide content when collapsed */
+  border-radius: 10px 0 0 10px;
 }
 
-/* Expand sidebar on hover */
+/* Expanded state on hover */
 .help-sidebar.expanded {
-  width: 260px;
+  width: 220px;
+  /* Expands on hover */
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Help button styling */
+/* Button styles */
 .help-btn {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 70px;
-  cursor: pointer;
-  background: #1abc9c;
-  /* Teal button */
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
-}
-
-/* Hover effect for the button */
-.help-btn:hover {
-  background: #f39c12;
-  /* Orange hover effect */
-  color: #fff;
+  align-items: center;
+  height: 60px;
+  font-size: 30px;
 }
 
 /* Options container */
 .help-options {
-  padding: 20px;
-  opacity: 0;
-  /* Hidden by default */
-  transform: translateX(20px);
-  transition: opacity 0.4s, transform 0.4s;
+  padding: 10px;
 }
 
-/* Show options on hover */
-.help-sidebar.expanded .help-options {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* List styling */
-ul {
+/* List styles */
+.help-options ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* List items */
-li {
+.help-options li {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
+  gap: 10px;
+  margin: 15px 0;
+  opacity: 0;
+  /* Hidden initially */
+  transition: opacity 0.3s;
 }
 
-/* Hover effect on list items */
-li:hover {
-  background: #34495e;
-  /* Darker shade */
-  transform: scale(1.05);
+/* Show the list items only when expanded */
+.help-sidebar.expanded .help-options li {
+  opacity: 1;
 }
 
-/* Icon styling */
+/* Icons and links */
 .menu-icon {
-  font-size: 26px;
-  color: #1abc9c;
-  /* Teal icon color */
-  transition: transform 0.3s, color 0.3s;
+  font-size: 24px;
 }
 
-/* Icon hover effect */
-li:hover .menu-icon {
-  color: #f1c40f;
-  /* Yellow color on hover */
-  transform: scale(1.3);
-}
-
-/* Text styling */
-li span {
-  font-size: 18px;
-  color: #ecf0f1;
-  /* Light text color */
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
   transition: color 0.3s;
 }
 
-/* Hover text color */
-li:hover span {
-  color: #e74c3c;
-  /* Red on hover */
+a:hover {
+  color: #f1c40f;
+}
+
+/* Page container styling */
+.page-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+h2 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Chat box container */
+.chat-box {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat messages */
+.chat-message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  line-height: 1.5;
+  max-width: 70%;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s;
+}
+
+/* Styling for current message being typed */
+.current-message {
+  color: #555;
+  font-style: italic;
+  background: #f1f1f1;
+}
+
+/* User message styling */
+.chat-message strong {
+  color: #3498db;
+  font-weight: bold;
+}
+
+/* Alternating message colors */
+.chat-message:nth-child(odd) {
+  background: #e6f7ff;
+  align-self: flex-start;
+}
+
+.chat-message:nth-child(even) {
+  background: #d1f7c4;
+  align-self: flex-end;
+}
+
+/* Chat input container */
+.chat-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  flex-direction: column;
+}
+
+/* Input field styling */
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: box-shadow 0.3s;
+  font-size: 16px;
+  width: 100%;
+}
+
+.chat-input input:focus {
+  box-shadow: 0 0 8px #3498db;
+}
+
+/* Send button styling */
+.chat-input button {
+  width: 100%;
+  /* Make button take full width */
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  /* Top and bottom padding only */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chat-input button:hover {
+  background: #218c54;
+}
+
+
+
+/* Scrollbar styling */
+.chat-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .page-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .chat-box {
+    height: 300px;
+  }
+
+  .chat-input input,
+  .chat-input button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
 
 
@@ -1967,7 +2091,8 @@ p {
 /* Deals Page Container */
 .deals-container {
   padding: 60px 30px;
-  max-width: 1000px;  /* Adjusted max width for a more compact container */
+  max-width: 1000px;
+  /* Adjusted max width for a more compact container */
   margin: 0 auto;
   text-align: center;
 }
@@ -1975,46 +2100,58 @@ p {
 /*  Deals Grid Layout */
 .deals-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced min width for smaller cards */
-  gap: 20px; /* More compact grid gap */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* Reduced min width for smaller cards */
+  gap: 20px;
+  /* More compact grid gap */
   justify-content: center;
 }
 
 /*  Deal Card */
 .deal-card {
   background: #fff;
-  border-radius: 10px; /* Slightly smaller border radius */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 10px;
+  /* Slightly smaller border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s;
   overflow: hidden;
-  width: 100%; /* Ensures the card does not stretch */
-  max-width: 280px; /* Reduced card max-width */
-  margin: auto; /* Centers the card in the grid */
-  padding: 12px; /* Smaller padding for compactness */
+  width: 100%;
+  /* Ensures the card does not stretch */
+  max-width: 280px;
+  /* Reduced card max-width */
+  margin: auto;
+  /* Centers the card in the grid */
+  padding: 12px;
+  /* Smaller padding for compactness */
 }
 
 .deal-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Soft hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  /* Soft hover effect */
 }
 
 /*  Deal Image */
 .deal-image {
   width: 100%;
-  height: 150px; /* Reduced height */
+  height: 150px;
+  /* Reduced height */
   object-fit: cover;
   border-radius: 8px;
 }
 
 /*  Deal Details */
 .deal-card h3 {
-  font-size: 18px; /* Slightly smaller title */
+  font-size: 18px;
+  /* Slightly smaller title */
   color: #34495e;
   margin: 8px 0 5px;
 }
 
 .deal-card p {
-  font-size: 14px; /* Smaller font for text */
+  font-size: 14px;
+  /* Smaller font for text */
   color: #2c3e50;
   margin: 4px 0;
 }
@@ -2026,23 +2163,28 @@ p {
   }
 
   .deals-grid {
-    gap: 15px; /* Less gap on smaller screens */
+    gap: 15px;
+    /* Less gap on smaller screens */
   }
 
   .deal-card {
-    max-width: 100%; /* Allows cards to be responsive and fit screen */
+    max-width: 100%;
+    /* Allows cards to be responsive and fit screen */
   }
 
   .deal-image {
-    height: 130px; /* Adjust image height for smaller screens */
+    height: 130px;
+    /* Adjust image height for smaller screens */
   }
 
   .deal-card h3 {
-    font-size: 16px; /* Adjust title font for smaller screens */
+    font-size: 16px;
+    /* Adjust title font for smaller screens */
   }
 
   .deal-card p {
-    font-size: 12px; /* Adjust text font for smaller screens */
+    font-size: 12px;
+    /* Adjust text font for smaller screens */
   }
 }
 
