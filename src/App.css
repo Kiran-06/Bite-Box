@@ -1022,6 +1022,125 @@ button:active {
   cursor: pointer;
 }
 
+/* Ensure modal is centered */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  /* Ensure it appears above other content */
+}
+
+/* Overlay styling to dim background */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  z-index: 1000;
+  /* Ensure overlay is above other elements */
+}
+
+/* Modal Title */
+.modal h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Modal text */
+.modal p {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Modal Input */
+.modal input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Modal Buttons */
+.modal button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Login Button */
+.modal button:first-of-type {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Cancel/Close Button */
+.modal button:last-of-type {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Button Hover Effects */
+.modal button:hover {
+  opacity: 0.8;
+}
+
+/* Adjusting for Navbar */
+@media (max-width: 768px) {
+  .modal {
+    width: 95%;
+    max-width: 350px;
+  }
+}
+
+/* Modal Success Message */
+.cart-message {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #28a745;
+  /* Green for success */
+  background: #e6f9e8;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Show message when content is there */
+.cart-message.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* Product page sytling ends */
 
 

@@ -36,7 +36,7 @@ const Footer = () => {
                     <li><a href="#">Fruits</a></li>
                     <li><a href="#">Vegetables</a></li>
                     <li><a href="#">Grocery</a></li>
-                    <li><a href="#">Medicine</a></li>
+                    <li><a href="#">Meat</a></li>
                 </ul>
             </div>
 
@@ -46,7 +46,6 @@ const Footer = () => {
                 <ul>
                     <li>📞 <a href="tel:+123456789">+123456789</a></li>
                     <li>📧 <a href="mailto:bitebox2025@gmail.com">bitebox2025@gmail.com</a></li>
-                    <li><a href="#">Cities we serve</a></li>
                 </ul>
             </div>
 
