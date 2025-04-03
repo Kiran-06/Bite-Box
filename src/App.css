@@ -34,7 +34,8 @@
 
 .logo-img {
   width: 60px;
-  height: auto;
+  height: 40px;
+  margin-right: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -49,11 +50,6 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-}
-
-.bite-box-logo:hover {
-  color: #c0392b;
-  transform: scale(1.1);
 }
 
 .bite-box-logo:hover {
@@ -174,7 +170,7 @@
   align-items: center;
   gap: 10px;
   background: #fff;
-  padding: 5px 15px;
+  padding: 5px 10px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -182,7 +178,8 @@
 .search-input {
   border: none;
   outline: none;
-  padding: 10px;
+  margin-top: 15px;
+  padding: 10px 15px;
   width: 250px;
   font-size: 16px;
 }
