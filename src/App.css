@@ -23,13 +23,12 @@
 .header-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .logo-img {
@@ -116,7 +115,7 @@
   background: #e74c3c;
   /* Red for Admin */
   color: #fff;
-  padding: 8px 12px;
+  padding: 8px 8px;
   border-radius: 5px;
   transition: background 0.3s, transform 0.3s;
 }
